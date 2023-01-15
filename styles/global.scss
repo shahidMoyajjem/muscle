@@ -1,0 +1,38 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+//   font-family: 'Poppins', sans-serif;
+// font-family: 'Eczar', serif;
+// font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: rgb(26, 26, 26);
+}
+
+button:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+ul {
+  list-style: none;
+}
+
+// source serif pro ......... bitter
