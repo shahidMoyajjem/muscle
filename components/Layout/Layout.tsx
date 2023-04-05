@@ -4,13 +4,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Styles from './Layout.module.scss'
 
-import Logo from '../../assets/logo/logo-2.png'
-import favicon from '../../assets/favicon.png'
+import Logo from '../../assets/makeMuscle/logo/logo2.png'
+import favicon from '../../assets/makeMuscle/logo/favicon.png'
 import SearchBar from 'components/SearchBar/SearchBar'
 
 
 
-type Props = {
+type Props = { 
   children?: ReactNode
   title?: string
 }
@@ -21,16 +21,18 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       <title>{title}</title>
       <meta charSet="utf-8" />
       <link rel="shortcut icon" href={favicon.src} />
+      <link rel="icon" type="image/gif" href={favicon.src} />
       <link rel="preconnect" href="https://fonts.googleapis.com" /> 
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"  /> 
-      <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@500&family=Lato&family=Source+Sans+Pro&display=swap" rel="stylesheet" /> 
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
    
     <header className={Styles.header}>
 
         <div className={Styles.imgHolder} >
-          <Image src={Logo} alt='Logo' width={250} height={62} style={{border:'1px solid #b54756'}} />
+          <Link href={'/'}>
+            <Image src={Logo} alt='Logo' width={215} height={60}  />
+          </Link>
         </div>
 
         <SearchBar />

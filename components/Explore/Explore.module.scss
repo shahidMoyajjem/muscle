@@ -8,14 +8,92 @@
     justify-content: space-around;
     align-items: center;
     margin-bottom: 5rem;
-}
+} 
 
-.fromTo{
-    width: 50%;
-    position: relative;
-
+.radioContainer{
+    width: 100%;
     display: flex;
+    justify-content: center;
 }
+
+.radioWrapper{
+    display: inline-flex;
+    background: #fff;
+    height: 80px;
+    width: 300px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    padding: 18px 15px;
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+  
+   .option{
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0 10px;
+    border: 2px solid lightgrey;
+    transition: all 0.3s ease;
+
+    span{
+        font-size: 20px;
+        color: #000000;
+      }
+
+    .dot{
+        height: 20px;
+        width: 20px;
+        background: #d9d9d9;
+        border-radius: 50%;
+        position: relative;
+
+        &::before{
+            position: absolute;
+            content: "";
+            top: 4px;
+            left: 4px;
+            width: 12px;
+            height: 12px;
+            background: #0069d9;
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(1.5);
+            transition: all 0.3s ease;
+          }
+    }
+ 
+  }
+
+}
+.input1 , .input2{
+    display: none;
+  }
+  .input1:checked:checked ~ .option1,
+  .input2:checked:checked ~ .option2{
+    border-color: #fba600;
+    background: #fba600;
+    color: white;
+  }
+  .input1:checked:checked ~ .option1 .dot,
+  .input2:checked:checked ~ .option2 .dot{
+    background: rgb(0, 31, 143);
+  }
+  .input1:checked:checked ~ .option-1 .dot::before,
+  .input2:checked:checked ~ .option-2 .dot::before{
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .input1:checked:checked ~ .option-1 span,
+  .input2:checked:checked ~ .option-2 span{
+    color: #fff;
+  }
 
 .fromBoxContainer{
     width: 50%;
@@ -28,18 +106,25 @@
 
 .fromBox{
     & > p{
-        font-size: 20px;
-        color: #b34854;
+        font-size: 15px;
+        color: #ac0115;
     }
     & > input{
-        background-color: #f6d9dc;
+        background-color: #fde7e9;
         outline: none;
         border: none;
-        padding: 0.8rem 3rem;
+        padding: 0.8rem 4.5rem;
         border-radius: 5px;
         border: 1px solid #b34854;
     }
+
+    & > input::placeholder{
+        color: #8f8b8b;
+        text-transform: uppercase;
+    }
 }
+  
+
 
 .explorerBtn{
     text-align: center;
@@ -62,5 +147,16 @@
     & > img {
         width: 80%;
         height: 70%;
+    } 
+}
+
+
+.muscle:hover {
+    cursor: pointer;
+
+    path{
+        fill: #b24851;
+        transition: 0.5s;
     }
+    
 }

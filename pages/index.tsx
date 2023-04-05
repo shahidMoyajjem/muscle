@@ -5,7 +5,7 @@ import Layout from '../components/Layout/Layout'
 
 const IndexPage = () => (
   <Layout title="Travel_Table | Adventure awaits with us">
-    <Hero />
+    {/* <Hero /> */}
     <Explore />
   </Layout>
 ) 

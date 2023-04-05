@@ -28,7 +28,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "pages/muscles/[sexType]"  ],
   "exclude": [
     "node_modules"
   ]
