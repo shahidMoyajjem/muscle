@@ -35,7 +35,10 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
           </Link>
         </div>
 
+        <div className={Styles.searchBoxHolder} >
         <SearchBar />
+        </div>
+        
 
         <div className={Styles.navators}>
           <p>Compare</p>

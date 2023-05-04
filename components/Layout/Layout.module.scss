@@ -12,8 +12,13 @@
     height: 100px; 
     background-color: #fff5e5;
     padding: 0px 8rem;
+    overflow: hidden;
 
     @include centerThings()
+}
+
+.searchBoxHolder{
+        
 }
 
 .navators{
@@ -25,3 +30,13 @@
         cursor: pointer;
     }
 }
+
+// @media only screen and (max-width: 600px) {
+
+//     .searchBoxHolder{
+//         display: none;
+//     }
+//     .navators{
+//         display: none;
+//     }
+// }

@@ -82,7 +82,7 @@
   }
   .input1:checked:checked ~ .option1 .dot,
   .input2:checked:checked ~ .option2 .dot{
-    background: rgb(0, 31, 143);
+    background: rgb(0, 0, 0);
   }
   .input1:checked:checked ~ .option-1 .dot::before,
   .input2:checked:checked ~ .option-2 .dot::before{

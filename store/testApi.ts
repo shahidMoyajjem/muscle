@@ -3,7 +3,12 @@ import { HYDRATE } from "next-redux-wrapper";
 
 export const testApi = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://pokeapi.co/api/v2/",
+    baseUrl: "https://musclewiki.p.rapidapi.com",
+    prepareHeaders: (headers, { getState }) => {
+      headers.set('Access-Control-Allow-Origin', '*'),
+      headers.set('X-RapidAPI-Key', 'b5364b69dfmsh0dffcfef36a1105p13c2afjsn9839267f971b'),
+      headers.set('X-RapidAPI-Host', 'musclewiki.p.rapidapi.com')
+    }
   }),
   extractRehydrationInfo(action, { reducerPath }) {
     if (action.type === HYDRATE) {
@@ -21,15 +26,19 @@ export const testApi = createApi({
     getPokemonList: builder.query<{ results: Array<{ name: string }> }, void>({
       query: () => `pokemon/`,
     }),
-  }),
+    getExerciseById : builder.query<{ results: Array<{ name: string }> }, void>({
+      query: (id) => `exercises/${id}`,
+    }),
+  }), 
 });
 
 // Export hooks for usage in functional components
 export const {
   useGetPokemonByNameQuery,
   useGetPokemonListQuery,
+  useGetExerciseByIdQuery,
   util: { getRunningOperationPromises },
 } = testApi;
 
 // export endpoints for use in SSR
-export const { getPokemonByName, getPokemonList } = testApi.endpoints;
+export const { getPokemonByName, getPokemonList, getExerciseById } = testApi.endpoints;
